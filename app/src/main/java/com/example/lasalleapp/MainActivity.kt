@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgs
 import androidx.navigation.navArgument
@@ -51,41 +52,51 @@ class MainActivity : ComponentActivity() {
             var selectedItemIndex by rememberSaveable {
                 mutableStateOf(0)
             }
+            val bottomNavRoutes = listOf(
+                Screens.Home.route,
+                Screens.Grades.route,
+                Screens.Settings.route,
+                Screens.Calendar.route
+            )
 
             LasalleAppTheme {
+                val courrentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
                 Scaffold(
                     modifier = Modifier.fillMaxSize(),
                     bottomBar = {
-                        AnimatedNavigationBar(
-                            selectedIndex = selectedItemIndex,
-                            modifier = Modifier.height(90.dp),
-                            barColor = MaterialTheme.colorScheme.primary,
-                            ballColor = MaterialTheme.colorScheme.primary,
-                            cornerRadius = shapeCornerRadius(34.dp) // Cambié la función shapeCornerRadius
-                        ) {
-                            bottomNavBarItems.forEachIndexed { index, bottomNavigattionItem ->
-                                Column(
-                                    horizontalAlignment = Alignment.CenterHorizontally,
-                                    verticalArrangement = Arrangement.Center,
-                                    modifier = Modifier
-                                        .fillMaxSize()
-                                        .clickable {
-                                            selectedItemIndex = index
-                                            navController.navigate(bottomNavigattionItem.route)
-                                        }
-                                ) {
-                                    Icon(
-                                        imageVector = bottomNavigattionItem.icon,
-                                        contentDescription = bottomNavigattionItem.title,
-                                        tint = if (selectedItemIndex == index) Color.White else Color.White.copy(alpha = 0.5f),
-                                        modifier = Modifier.size(26.dp)
-                                    )
+                        if(courrentRoute in bottomNavRoutes){
+                            AnimatedNavigationBar(
+                                selectedIndex = selectedItemIndex,
+                                modifier = Modifier.height(90.dp),
+                                barColor = MaterialTheme.colorScheme.primary,
+                                ballColor = MaterialTheme.colorScheme.primary,
+                                cornerRadius = shapeCornerRadius(34.dp) // Cambié la función shapeCornerRadius
+                            ) {
+                                bottomNavBarItems.forEachIndexed { index, bottomNavigattionItem ->
+                                    Column(
+                                        horizontalAlignment = Alignment.CenterHorizontally,
+                                        verticalArrangement = Arrangement.Center,
+                                        modifier = Modifier
+                                            .fillMaxSize()
+                                            .clickable {
+                                                selectedItemIndex = index
+                                                navController.navigate(bottomNavigattionItem.route)
+                                            }
+                                    ) {
+                                        Icon(
+                                            imageVector = bottomNavigattionItem.icon,
+                                            contentDescription = bottomNavigattionItem.title,
+                                            tint = if (selectedItemIndex == index) Color.White else Color.White.copy(alpha = 0.5f),
+                                            modifier = Modifier.size(26.dp)
+                                        )
 
-                                    Text(
-                                        text = bottomNavigattionItem.title,
-                                        color = if (selectedItemIndex == index) Color.White else Color.White.copy(alpha = 0.5f),
-                                        fontSize = 12.sp // Tamaño de fuente ajustado
-                                    )
+                                        Text(
+                                            text = bottomNavigattionItem.title,
+                                            style = MaterialTheme.typography.bodySmall,
+                                            color = if (selectedItemIndex == index) Color.White else Color.White.copy(alpha = 0.5f),
+                                            fontSize = 12.sp // Tamaño de fuente ajustado
+                                        )
+                                    }
                                 }
                             }
                         }

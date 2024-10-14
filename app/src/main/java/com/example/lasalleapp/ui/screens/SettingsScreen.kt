@@ -7,12 +7,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import com.example.lasalleapp.ui.components.ScreenTemplate
 
 @Composable
 fun SettingsScreen(innerPadding : PaddingValues){
-    Box(modifier = Modifier
-        .padding(innerPadding)
-        .fillMaxSize()){
-        Text("Settings")
-    }
+    ScreenTemplate(innerPadding = innerPadding, header = {
+        Text(text = "Hola")
+    }, body = {
+        Text(text = "Hola")
+    })
 }
