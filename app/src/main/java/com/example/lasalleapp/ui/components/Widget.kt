@@ -16,8 +16,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.input.pointer.PointerIcon.Companion.Text
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.lasalleapp.ui.theme.GrayDark
 import com.example.lasalleapp.ui.theme.GrayLight
 import com.example.lasalleapp.ui.theme.LasalleAppTheme
@@ -42,10 +44,12 @@ fun Widget(icon: ImageVector, text: String){
                 tint = MaterialTheme.colorScheme.primary
             )
             Text(
-                text= text,
+                text = text,
                 color = MaterialTheme.colorScheme.primary,
-                style = MaterialTheme.typography.bodySmall,
-                fontWeight = MaterialTheme.typography.bodySmall.fontWeight
+                style = MaterialTheme.typography.bodySmall.copy(
+                    fontSize = 10.sp // Ajusta este valor según el tamaño que desees
+                ),
+                fontWeight = FontWeight.Normal // Puedes cambiarlo si prefieres otro peso
             )
         }
     }

@@ -1,7 +1,10 @@
 package com.example.lasalleapp.ui.utils
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.Settings
 import com.example.lasalleapp.models.BottomNavigattionItem
 import com.example.lasalleapp.models.News
 
@@ -33,19 +36,19 @@ val bottomNavBarItems = listOf(
         route = Screens.Home.route
     ),
     BottomNavigattionItem(
-        title = "Inicio",
-        icon = Icons.Default.Home,
-        route = Screens.Home.route
+        title = "Calificaciónes",
+        icon = Icons.Default.Menu,
+        route = Screens.Grades.route
     ),
     BottomNavigattionItem(
-        title = "Inicio",
-        icon = Icons.Default.Home,
-        route = Screens.Home.route
+        title = "Calendario",
+        icon = Icons.Default.DateRange,
+        route = Screens.Calendar.route
     ),
     BottomNavigattionItem(
-        title = "Inicio",
-        icon = Icons.Default.Home,
-        route = Screens.Home.route
+        title = "Configuracion",
+        icon = Icons.Default.Settings,
+        route = Screens.Settings.route
     ),
 
 )
