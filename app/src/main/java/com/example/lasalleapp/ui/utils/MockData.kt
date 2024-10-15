@@ -1,10 +1,12 @@
 package com.example.lasalleapp.ui.utils
 
+import android.graphics.Bitmap.Config
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Settings
+import com.example.lasalleapp.models.AlternativeScreen
 import com.example.lasalleapp.models.BottomNavigattionItem
 import com.example.lasalleapp.models.Community
 import com.example.lasalleapp.models.News
@@ -61,3 +63,10 @@ val communities = listOf(
     Community(4,"https://www.lasallebajio.edu.mx/comunidad/images/tile_tramites.jpg"),
     Community(5,"https://www.lasallebajio.edu.mx/comunidad/images/tile_blog.jpg"),
     )
+val alternativeScreen = listOf(
+    AlternativeScreen(
+        id = 1,
+        title = "Configuración",
+        image = Icons.Default.Settings
+    )
+)

@@ -27,6 +27,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DateRange
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -64,7 +65,7 @@ fun HomeScreen(innerPadding: PaddingValues, navController: NavController) {
         modifier = Modifier
             .fillMaxSize()
             .padding(innerPadding)
-            .background(GrayLight)
+            .background(MaterialTheme.colorScheme.background)
             .verticalScroll(
                 rememberScrollState()
             ),
@@ -117,7 +118,7 @@ fun HomeScreen(innerPadding: PaddingValues, navController: NavController) {
 
                 }
                 Icon(
-                    imageVector = Logout,
+                    imageVector = Icons.Default.Settings,
                     contentDescription = "Logout",
                     modifier = Modifier
                         .size(45.dp)
@@ -153,7 +154,7 @@ fun HomeScreen(innerPadding: PaddingValues, navController: NavController) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(GrayLight)
+                .background(MaterialTheme.colorScheme.background)
         ) {
             Column(
                 modifier = Modifier
