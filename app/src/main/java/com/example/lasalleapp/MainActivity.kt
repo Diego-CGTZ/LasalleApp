@@ -32,6 +32,7 @@ import androidx.navigation.navArgument
 import com.example.lasalleapp.ui.screens.CalendarScreen
 import com.example.lasalleapp.ui.screens.ChangePassword
 import com.example.lasalleapp.ui.screens.ChangeTheme
+import com.example.lasalleapp.ui.screens.GradesDetail
 import com.example.lasalleapp.ui.screens.GradesScreen
 import com.example.lasalleapp.ui.screens.HomeScreen
 import com.example.lasalleapp.ui.screens.NewsDetailScreen
@@ -112,7 +113,7 @@ class MainActivity : ComponentActivity() {
                             CalendarScreen(innerPadding = innerPadding)
                         }
                         composable(route = Screens.Grades.route) {
-                            GradesScreen(innerPadding = innerPadding)
+                            GradesScreen(1,innerPadding = innerPadding, navController = navController)
                         }
                         composable(route = Screens.Settings.route) {
                             SettingsScreen(1, innerPadding = innerPadding, navController = navController)
@@ -122,6 +123,17 @@ class MainActivity : ComponentActivity() {
                         }
                         composable(route = Screens.ChangeTheme.route){
                             ChangeTheme(innerPadding = innerPadding)
+                        }
+                        composable(route = Screens.GradesDetail.route+"/{id}",
+                            arguments = listOf(
+                                navArgument("id"){
+                                    type =NavType.IntType
+                                    nullable = false
+                                }
+                            )
+                        ) {
+                            val id = it.arguments?.getInt("id",0) ?: 0
+                            GradesDetail(gradesId=id,innerPadding = innerPadding)
                         }
                         composable(
                             route = Screens.NewsDetail.route+"/{id}",

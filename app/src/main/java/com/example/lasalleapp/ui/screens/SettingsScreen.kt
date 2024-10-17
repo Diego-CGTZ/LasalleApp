@@ -49,6 +49,7 @@ import com.example.lasalleapp.ui.components.ScreenTemplate
 import com.example.lasalleapp.ui.theme.LasalleAppTheme
 import com.example.lasalleapp.ui.utils.Colors
 import com.example.lasalleapp.ui.utils.Logout
+import com.example.lasalleapp.ui.utils.Password
 import com.example.lasalleapp.ui.utils.Screens
 import com.example.lasalleapp.ui.utils.newsList
 import com.example.lasalleapp.ui.utils.students
@@ -161,9 +162,9 @@ fun SettingsScreen(studentsId: Int,innerPadding : PaddingValues, navController: 
                         .height(50.dp)
                 )
                 {
-                    Icon(imageVector = Icons.Default.Edit,
+                    Icon(imageVector = Password,
                         contentDescription = "Password",
-                        modifier = Modifier,
+                        modifier = Modifier.padding(end = 5.dp),
                         tint = Color.White
                     )
 
@@ -192,7 +193,7 @@ fun SettingsScreen(studentsId: Int,innerPadding : PaddingValues, navController: 
                 {
                     Icon(imageVector = Colors,
                         contentDescription = "ThemeChanger",
-                        modifier = Modifier,
+                        modifier = Modifier.padding(end = 5.dp),
                         tint = Color.White
                     )
 

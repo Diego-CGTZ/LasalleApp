@@ -11,6 +11,7 @@ import com.example.lasalleapp.models.BottomNavigattionItem
 import com.example.lasalleapp.models.Community
 import com.example.lasalleapp.models.News
 import com.example.lasalleapp.models.Student
+import com.example.lasalleapp.models.Subject
 
 val newsList = listOf(
     News(
@@ -70,4 +71,9 @@ val students = listOf(
         "20/04/2004",
         "https://img.freepik.com/free-photo/portrait-confident-asian-businessman_1262-1555.jpg",
         "dcg78026@lasalle.edu.mx")
+)
+val subjects = listOf(
+    Subject(1,"Administración de bases de datos",8.5,8.0,7.5,10.0),
+    Subject(2,"Modelado de imagenes",8.5,8.0,7.5,10.0),
+    Subject(3,"Taller de desarrollo movil para plataforma Android",10.0,10.0,10.0,10.0),
 )
