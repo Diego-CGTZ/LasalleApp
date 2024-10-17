@@ -118,7 +118,7 @@ fun HomeScreen(innerPadding: PaddingValues, navController: NavController) {
 
                 }
                 Icon(
-                    imageVector = Icons.Default.Settings,
+                    imageVector = Logout,
                     contentDescription = "Logout",
                     modifier = Modifier
                         .size(45.dp)

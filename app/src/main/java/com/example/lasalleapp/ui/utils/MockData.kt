@@ -10,6 +10,7 @@ import com.example.lasalleapp.models.AlternativeScreen
 import com.example.lasalleapp.models.BottomNavigattionItem
 import com.example.lasalleapp.models.Community
 import com.example.lasalleapp.models.News
+import com.example.lasalleapp.models.Student
 
 val newsList = listOf(
     News(
@@ -63,10 +64,10 @@ val communities = listOf(
     Community(4,"https://www.lasallebajio.edu.mx/comunidad/images/tile_tramites.jpg"),
     Community(5,"https://www.lasallebajio.edu.mx/comunidad/images/tile_blog.jpg"),
     )
-val alternativeScreen = listOf(
-    AlternativeScreen(
-        id = 1,
-        title = "Configuración",
-        image = Icons.Default.Settings
-    )
+
+val students = listOf(
+    Student(1,"Diego Camarena Gutiérrez",
+        "20/04/2004",
+        "https://img.freepik.com/free-photo/portrait-confident-asian-businessman_1262-1555.jpg",
+        "dcg78026@lasalle.edu.mx")
 )

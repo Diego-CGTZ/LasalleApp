@@ -30,6 +30,8 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.lasalleapp.ui.screens.CalendarScreen
+import com.example.lasalleapp.ui.screens.ChangePassword
+import com.example.lasalleapp.ui.screens.ChangeTheme
 import com.example.lasalleapp.ui.screens.GradesScreen
 import com.example.lasalleapp.ui.screens.HomeScreen
 import com.example.lasalleapp.ui.screens.NewsDetailScreen
@@ -55,7 +57,8 @@ class MainActivity : ComponentActivity() {
                 Screens.Home.route,
                 Screens.Grades.route,
                 Screens.Settings.route,
-                Screens.Calendar.route
+                Screens.Calendar.route,
+                Screens.ChangePassword.route
             )
 
             LasalleAppTheme {
@@ -112,7 +115,13 @@ class MainActivity : ComponentActivity() {
                             GradesScreen(innerPadding = innerPadding)
                         }
                         composable(route = Screens.Settings.route) {
-                            SettingsScreen(innerPadding = innerPadding)
+                            SettingsScreen(1, innerPadding = innerPadding, navController = navController)
+                        }
+                        composable(route = Screens.ChangePassword.route){
+                            ChangePassword(innerPadding = innerPadding)
+                        }
+                        composable(route = Screens.ChangeTheme.route){
+                            ChangeTheme(innerPadding = innerPadding)
                         }
                         composable(
                             route = Screens.NewsDetail.route+"/{id}",

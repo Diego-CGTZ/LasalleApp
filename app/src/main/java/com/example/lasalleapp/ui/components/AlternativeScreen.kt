@@ -31,7 +31,6 @@ import coil.compose.AsyncImage
 import com.example.lasalleapp.R
 import com.example.lasalleapp.ui.theme.LasalleAppTheme
 import com.example.lasalleapp.ui.utils.Logout
-import com.example.lasalleapp.ui.utils.alternativeScreen
 
 /*@Composable
 fun AlternativeScreen(alternativeScreenId: Int, innerPadding : PaddingValues){
