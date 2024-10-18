@@ -15,5 +15,6 @@ val White = Color(0xFFFFFFFF)
 val Red = Color(0xFFD32F2F)
 val GrayDark = Color(0xFF4B4B4B)
 val GrayLight = Color(0xFFF0F0F0)
-val BlueLight = Color(0xFF338FE9)
+val GreenCheck = Color(0xFF248A29)
+val YellowWarning = Color(0xFFCEB431)
 

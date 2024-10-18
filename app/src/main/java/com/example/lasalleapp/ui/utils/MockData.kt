@@ -10,6 +10,7 @@ import com.example.lasalleapp.models.AlternativeScreen
 import com.example.lasalleapp.models.BottomNavigattionItem
 import com.example.lasalleapp.models.Community
 import com.example.lasalleapp.models.News
+import com.example.lasalleapp.models.Payment
 import com.example.lasalleapp.models.Student
 import com.example.lasalleapp.models.Subject
 
@@ -55,7 +56,6 @@ val bottomNavBarItems = listOf(
         icon = Icons.Default.Settings,
         route = Screens.Settings.route
     ),
-
 )
 
 val communities = listOf(
@@ -76,4 +76,13 @@ val subjects = listOf(
     Subject(1,"Administración de bases de datos",8.5,8.0,7.5,10.0),
     Subject(2,"Modelado de imagenes",8.5,8.0,7.5,10.0),
     Subject(3,"Taller de desarrollo movil para plataforma Android",10.0,10.0,10.0,10.0),
+    Subject(4,"Front end",8.3,7.5,9.5,8.0),
+    Subject(5,"Modelos abstractos",9.0,10.0,10.0,7.0)
+)
+
+val payments = listOf(
+    Payment(1,"Octubre","Colegiatura",10000.0,true),
+    Payment(2,"Noviembre","Colegiatura",10000.0,false),
+    Payment(3,"Diciembre","Colegiatura",10000.0,false),
+    Payment(4,"Diciembre","Festival de la cancion",150.0,true),
 )

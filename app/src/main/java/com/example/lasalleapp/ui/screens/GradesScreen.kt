@@ -48,7 +48,7 @@ import com.example.lasalleapp.ui.utils.newsList
 import com.example.lasalleapp.ui.utils.subjects
 
 @Composable
-fun GradesScreen(studentsId: Int,innerPadding : PaddingValues, navController: NavController){
+fun GradesScreen(studentsId : Int,innerPadding : PaddingValues, navController: NavController){
     Column(
         modifier = Modifier
             .fillMaxSize()

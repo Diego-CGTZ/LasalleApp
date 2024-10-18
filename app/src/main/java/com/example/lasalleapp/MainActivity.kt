@@ -29,6 +29,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.example.lasalleapp.ui.components.PayItem
 import com.example.lasalleapp.ui.screens.CalendarScreen
 import com.example.lasalleapp.ui.screens.ChangePassword
 import com.example.lasalleapp.ui.screens.ChangeTheme
@@ -36,6 +37,8 @@ import com.example.lasalleapp.ui.screens.GradesDetail
 import com.example.lasalleapp.ui.screens.GradesScreen
 import com.example.lasalleapp.ui.screens.HomeScreen
 import com.example.lasalleapp.ui.screens.NewsDetailScreen
+import com.example.lasalleapp.ui.screens.PayScreen
+import com.example.lasalleapp.ui.screens.PaymentDetail
 import com.example.lasalleapp.ui.screens.SettingsScreen
 import com.example.lasalleapp.ui.theme.LasalleAppTheme
 import com.example.lasalleapp.ui.utils.Screens
@@ -59,7 +62,8 @@ class MainActivity : ComponentActivity() {
                 Screens.Grades.route,
                 Screens.Settings.route,
                 Screens.Calendar.route,
-                Screens.ChangePassword.route
+                Screens.ChangePassword.route,
+                Screens.PayScreen.route
             )
 
             LasalleAppTheme {
@@ -124,6 +128,23 @@ class MainActivity : ComponentActivity() {
                         composable(route = Screens.ChangeTheme.route){
                             ChangeTheme(innerPadding = innerPadding)
                         }
+                        composable(route = Screens.PayScreen.route){
+                            PayScreen(innerPadding = innerPadding,1, navController = navController)
+                        }
+
+                        composable(
+                            route = Screens.PaymentDetail.route+"/{id}",
+                            arguments = listOf(
+                                navArgument("id"){
+                                    type =NavType.IntType
+                                    nullable = false
+                                }
+                            )
+                        ) {
+                            val id = it.arguments?.getInt("id",0) ?: 0
+                            PaymentDetail()
+                        }
+
                         composable(route = Screens.GradesDetail.route+"/{id}",
                             arguments = listOf(
                                 navArgument("id"){

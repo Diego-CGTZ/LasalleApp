@@ -21,6 +21,7 @@ import com.example.lasalleapp.models.Subject
 @Composable
 fun SubjectItem(subject: Subject, onClick : (Subject)->Unit){
     Row (modifier = Modifier
+            .padding(10.dp)
             .clickable {onClick(subject)},
         verticalAlignment = Alignment.CenterVertically){
         Text(text = subject.name,
